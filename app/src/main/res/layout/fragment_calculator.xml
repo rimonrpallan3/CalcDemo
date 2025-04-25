@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E2E2E"
+    android:padding="16dp">
+
+    <!-- Display -->
+    <TextView
+        android:id="@+id/tvExpression"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:text="0"
+        android:gravity="end"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="8dp" />
+
+    <!-- Barrier for row spacing -->
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierRow1"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="btnAC,btnDel,btnDivide" android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+
+    <!-- AC (spans two columns) -->
+    <Button
+        android:id="@+id/btnAC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="AC"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#AAAAAA"
+        app:layout_constraintTop_toBottomOf="@id/tvExpression"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDel"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <!-- Del -->
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Del"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#888888"
+        app:layout_constraintTop_toTopOf="@id/btnAC"
+        app:layout_constraintStart_toEndOf="@id/btnAC"
+        app:layout_constraintEnd_toStartOf="@id/btnDivide"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <!-- Divide -->
+    <Button
+        android:id="@+id/btnDivide"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF9800"
+        app:layout_constraintTop_toTopOf="@id/btnAC"
+        app:layout_constraintStart_toEndOf="@id/btnDel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <!-- Row 2 -->
+    <Button
+        android:id="@+id/btn7"
+        style="@style/CalcButtonStyle"
+        android:text="7"
+        app:layout_constraintTop_toBottomOf="@id/btnAC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <Button
+        android:id="@+id/btn8"
+        style="@style/CalcButtonStyle"
+        android:text="8"
+        app:layout_constraintTop_toTopOf="@id/btn7"
+        app:layout_constraintStart_toEndOf="@id/btn7"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <Button
+        android:id="@+id/btn9"
+        style="@style/CalcButtonStyle"
+        android:text="9"
+        app:layout_constraintTop_toTopOf="@id/btn7"
+        app:layout_constraintStart_toEndOf="@id/btn8"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <Button
+        android:id="@+id/btnMultiply"
+        style="@style/CalcButtonStyle"
+        android:text="x"
+        android:backgroundTint="#FF9800"
+        app:layout_constraintTop_toTopOf="@id/btn7"
+        app:layout_constraintStart_toEndOf="@id/btn9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <!-- Row 3 -->
+    <Button
+        android:id="@+id/btn4"
+        style="@style/CalcButtonStyle"
+        android:text="4"
+        app:layout_constraintTop_toBottomOf="@id/btn7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25"/>
+
+    <Button
+        android:id="@+id/btn5"
+        style="@style/CalcButtonStyle"
+        android:text="5"
+        app:layout_constraintTop_toTopOf="@id/btn4"
+        app:layout_constraintStart_toEndOf="@id/btn4"
+        app:layout_constraintWidth_percent="0.25"/>
+
+    <Button
+        android:id="@+id/btn6"
+        style="@style/CalcButtonStyle"
+        android:text="6"
+        app:layout_constraintTop_toTopOf="@id/btn4"
+        app:layout_constraintStart_toEndOf="@id/btn5"
+        app:layout_constraintWidth_percent="0.25"/>
+
+    <Button
+        android:id="@+id/btnMinus"
+        style="@style/CalcButtonStyle"
+        android:text="-"
+        android:backgroundTint="#FF9800"
+        app:layout_constraintTop_toTopOf="@id/btn4"
+        app:layout_constraintStart_toEndOf="@id/btn6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.25"/>
+
+    <!-- Row 4 -->
+    <Button
+        android:id="@+id/btn1"
+        style="@style/CalcButtonStyle"
+        android:text="1"
+        app:layout_constraintTop_toBottomOf="@id/btn4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25"/>
+
+    <Button
+        android:id="@+id/btn2"
+        style="@style/CalcButtonStyle"
+        android:text="2"
+        app:layout_constraintTop_toTopOf="@id/btn1"
+        app:layout_constraintStart_toEndOf="@id/btn1"
+        app:layout_constraintWidth_percent="0.25"/>
+
+    <Button
+        android:id="@+id/btn3"
+        style="@style/CalcButtonStyle"
+        android:text="3"
+        app:layout_constraintTop_toTopOf="@id/btn1"
+        app:layout_constraintStart_toEndOf="@id/btn2"
+        app:layout_constraintWidth_percent="0.25"/>
+
+    <Button
+        android:id="@+id/btnPlus"
+        style="@style/CalcButtonStyle"
+        android:text="+"
+        android:backgroundTint="#FF9800"
+        app:layout_constraintTop_toTopOf="@id/btn1"
+        app:layout_constraintStart_toEndOf="@id/btn3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Row 5 -->
+    <Button
+        android:id="@+id/btn0"
+        style="@style/CalcButtonStyle"
+        android:text="0"
+        app:layout_constraintTop_toBottomOf="@id/btn1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <Button
+        android:id="@+id/btnDot"
+        style="@style/CalcButtonStyle"
+        android:text="."
+        app:layout_constraintTop_toTopOf="@id/btn0"
+        app:layout_constraintStart_toEndOf="@id/btn0"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <Button
+        android:id="@+id/btnEquals"
+        style="@style/CalcButtonStyle"
+        android:text="="
+        android:backgroundTint="#FF9800"
+        app:layout_constraintTop_toTopOf="@id/btn0"
+        app:layout_constraintStart_toEndOf="@id/btnDot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
